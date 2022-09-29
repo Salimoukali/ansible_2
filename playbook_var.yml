@@ -1,0 +1,16 @@
+---
+- hosts: all
+  become: true
+  vars:
+   user: omega
+  tasks:
+  - name: Installation de vim et git
+    yum:
+      name: {{ item }}
+      state: present
+    with_items:
+     - git
+     - vim
+  - name: Creation d'un utilisateur
+    user: name={{ omega }}
+...

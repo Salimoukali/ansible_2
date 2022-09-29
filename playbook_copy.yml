@@ -1,0 +1,13 @@
+---
+- name: copy file
+  hosts: all
+  become: true
+  tasks:
+    - name: copier un fichier
+      copy:
+        src: ./index.html
+        dest: /home/adm1
+        owner: adm1
+        group: adm1
+        mode: 644
+...

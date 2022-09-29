@@ -1,0 +1,15 @@
+---
+- name: yum module demo
+  hosts: all
+  become: true
+  tasks:
+    - name: installation de vim
+      yum:
+        name: vim
+        state: present
+        update_cache: yes
+    - name: installation de Git
+      yum:
+        name: git
+        state: present
+...

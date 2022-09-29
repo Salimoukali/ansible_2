@@ -1,0 +1,21 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: Installation de vim et git
+    yum:
+      name: "{{ item }}"
+      state: present
+    with_items:
+    - git
+    - vim
+  - name: Creation d'un utilisateur
+    user: name=omega
+  - name: copier un fichier
+    copy:
+        src: ./index.html
+        dest: /home/adm1
+        owner: adm1
+        group: adm1
+        mode: 644
+...

@@ -1,0 +1,5 @@
+[web]
+ansible_1 ansible_user=root
+[db]
+ansible_2 ansible_user=root
+
